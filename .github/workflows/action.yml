@@ -1,0 +1,15 @@
+name: First Action
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Action Started"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: List files
+        run: ls ${{github.workspace}}
